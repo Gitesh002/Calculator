@@ -1,4 +1,5 @@
 #include<iostream>
+//test comment
 class Calc
 {   
 private:
@@ -10,6 +11,7 @@ public:
     int sub() {return x - y;}
     int div() {return x / y;}
 };
+//main function
 int main()
 {   
     Calc b(2,10);
