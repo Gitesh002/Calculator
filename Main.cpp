@@ -3,13 +3,14 @@
 class Calc
 {   
 private:
-    int x,y;
+    
 public:
-    Calc(int num1, int num2) :x(num1),y(num2){}
-    int add() {return x + y;}
-    int mul() {return x * y;}
-    int sub() {return x - y;}
-    int div() {return x / y;}
+    int res;
+    Calc() :res(0){}
+    int add(int x, int y) {this->res = x + y;return x + y;}
+    int mul(int x, int y) {this->res = x * y;return x * y;}
+    int sub(int x, int y) {this->res = x - y;return x - y;}
+    int div(int x, int y) {this->res = x / y;return x / y;}
 };
 
 int main()
@@ -31,8 +32,11 @@ int main()
         std::cout << "Enter number with spaces : ";
         std::cin >> x;
         std::cin >> y;
-        Calc b(x,y);
-        std::cout << b.add();
+        Calc b;
+        std::cout << b.add(x,y)<<std::endl;
+        std::cout <<"Enter Another Number:";
+        std::cin >> y;
+        std::cout << b.add(b.res,y);
         break;
     }
     //multiplication state
@@ -40,8 +44,8 @@ int main()
         std::cout << "Enter number with spaces : ";
         std::cin >> x;
         std::cin >> y;
-        Calc b(x,y);
-        std::cout << b.mul();
+        Calc b;
+        std::cout << b.mul(x,y);
         break;
     }
     //subtraction state
@@ -49,8 +53,8 @@ int main()
         std::cout << "Enter number with spaces : ";
         std::cin >> x;
         std::cin >> y;
-        Calc b(x,y);
-        std::cout << b.sub();
+        Calc b;
+        std::cout << b.sub(x,y);
         break;
     }
     //division state
@@ -58,8 +62,8 @@ int main()
         std::cout << "Enter numbers with spaces : ";
         std::cin >> x;
         std::cin >> y;
-        Calc b(x,y);
-        std::cout << b.div();
+        Calc b;
+        std::cout << b.div(x,y);
         break;
     }
     //if entered state is invalid print invalid
