@@ -29,14 +29,16 @@ int main()
     {
     //addition state
     case 1: {
-        std::cout << "Enter number with spaces : ";
+        std::cout << "Enter number with spaces(n to stop) : ";
         std::cin >> x;
         std::cin >> y;
         Calc b;
-        std::cout << b.add(x,y)<<std::endl;
-        std::cout <<"Enter Another Number:";
-        std::cin >> y;
-        std::cout << b.add(b.res,y);
+        std::cout << b.add(x,y);
+        while(y)
+        {   std::cout <<" + ";
+            std::cin >> y;
+            std::cout << b.add(b.res,y);
+        }   
         break;
     }
     //multiplication state
@@ -46,6 +48,11 @@ int main()
         std::cin >> y;
         Calc b;
         std::cout << b.mul(x,y);
+        while(y)
+        {   std::cout <<" * ";
+            std::cin >> y;
+            std::cout << b.mul(b.res,y);
+        }   
         break;
     }
     //subtraction state
